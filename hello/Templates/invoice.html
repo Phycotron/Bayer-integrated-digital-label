@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>Bayer_QR_Coder|Invoice</title>
+
+  <script type="text/javascript" src="https://unpkg.com/qr-code-styling/lib/qr-code-styling.js"></script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+  <style>
+    .pro_nav{
+    
+      border-radius: 10px;
+      margin-right: 80%;
+    }
+    .navbar-brand{
+      box-shadow: lawngreen;
+    }
+
+    #bayer_logo{
+      height: 50px;
+      width: 50px;
+    }
+    body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  #header{
+    background-color: white;
+    width: 100%; 
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.09);
+  }
+  
+  #content{
+    border-radius: 5%;
+    margin-right: 80px;
+    margin-left: 80px;
+    background-color: aliceblue;
+    width: 75%;
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-evenly;
+  }
+  
+  .inputContainer{ margin-top: 5%; display: flex; flex-direction: column;}
+  
+  #formButton{
+    margin-top: 5%;
+    background-color: rgb(250, 250, 250);
+    border: 0.5px solid grey;
+    border-radius: 8px;
+    box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.09);
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    }
+
+   #canvas{
+     margin-top: 5%;
+   } 
+  </style>
+
+</head>
+
+<body background="https://source.unsplash.com/1600x900/?agriculture" >
+  
+  
+
+<header id="header"><a href="https://www.bayer.in/en/thisisbayer/contact-us"><img id=bayer_logo src="\static\bayer.png" alt=""></a><h1>Invoice QR Code Generator</h1></header>
+<!-- <a href="https://www.bayer.in/en/thisisbayer/contact-us"><img id=bayer_logo src="\static\bayer.png" alt=""></a> -->
+<div class="pro_nav">
+  <nav class="nav_pro" style="background-color: white;" style="font-size: 45px;" >
+    
+     <button><a class="navbar-brand" href="index.html" target="blank" style="font-style: italic;">QR Code Generator</a></button>
+    <button><a class="navbar-brand" href="about_invoice.html" target="blank" style="font-style: italic;">About</a></button>
+    
+    
+  </nav>
+</div>
+
+<section id="content">
+
+  <div>
+
+    <form id="qrForm" onsubmit="return false;">
+
+      <div class="inputContainer">
+
+        <label for="dataInput">Customer Name</label>
+        <input type="text" onchange="updateQrData();"  name="dataInput" id="dataInput" placeholder="Mohan" required />
+        
+
+        <!-- <label for="dataInput">Contact No</label>
+        <input type="text" onchange="updateQrlastname();" name="dataInput" id="lastname" placeholder="+91..." required />
+        <br> -->
+
+        <label for="dataInput">Issued Date</label>
+        <input type="date" onchange="updateQrdob();" name="dataInput" id="dob" placeholder="01/01/2001" required />
+        
+
+        <!-- <label  >Ordered Status</label> -->
+        <div >
+          <!-- Ordered:<input type="radio"  onchange="updateQrnat();" name="dataInput" >
+          Placed: <input type="radio" onchange="updateQrnat();" name="dataInput" >
+          Shiped: <input type="radio" onchange="updateQrnat();" name="dataInput" >
+          Delivered: <input type="radio" onchange="updateQrnat();" name="dataInput" > -->
+          <!-- <input type="text" onchange="updateQrnat();" name="dataInput" id="nat" placeholder="malaysia" required /> -->
+        </div>
+          <br>  
+
+        <label for="dataInput" >Ordered Status manually</label>
+        <input type="text" onchange="updateQrnat();" name="dataInput" id="nat" placeholder="Ordered/Placed/Shiped/Delivered" required />
+        <br>
+        <label for="dataInput"> Order Location</label>
+        <input type="text" onchange="updateQrlastname();" name="dataInput" id="lastname" placeholder="Bombay" required />
+
+        <label for="dataInput">contact-us</label>
+        <input type="text" onchange="updateQrblank();" name="dataInput" id="blank" placeholder="Phone/link " required />
+
+        <!-- <label for="dataInput">Remarks</label>
+        <input type="text" onchange="updateQrblank();" name="dataInput" id="blank" placeholder="Link/" required /> -->
+
+      </div>
+
+      <div class="inputContainer">
+
+        <label for="imageInput">Choose a Image For QR Logo</label>
+
+        <input type="file" onchange="updateQrImg();" name="imageInput" id="imageInput" accept="image/*"  />
+
+      </div>
+
+      <div class="inputContainer">
+
+        <label for="colorInput">Color</label>
+
+        <input type="color" onchange="updateQrColor();" name="colorInput" id="colorInput" />
+
+      </div>
+
+      <div class="inputContainer">
+
+        <label for="typeInput">Type</label>
+
+        <select name="typeInput" id="typeInput" onchange="updateQrType();">
+
+          <option value="square">Square</option>
+
+          <option value="rounded">Rounded</option>
+
+          <option value="dots">Dots</option>
+
+        </select>
+
+      </div>
+
+    </form>
+
+    <button id="formButton" onclick="download();">Download</button>
+
+  </div>
+
+  <div id="canvas"></div>
+
+</section>
+
+<script type="text/javascript" src="qr.js"></script>
+
+</body>
+<script>
+  qrData = document.getElementById('dataInput');
+qrLastname = document.getElementById('lastname');
+qrdob = document.getElementById('dob');
+qrnat = document.getElementById('nat');
+qrblank = document.getElementById('blank');
+qrImage = document.getElementById('imageInput');
+qrColor = document.getElementById('colorInput');
+qrType = document.getElementById('typeInput');
+
+const qrCode = new QRCodeStyling({
+  width: 300,
+  height: 300,
+  data: "Please enter the data and then try to scan me.",
+  image: "",
+  dotsOptions: {
+    color: "#000",
+    type: "square"
+  },
+});
+
+const updateQrData = () => {
+  newQrData = qrData.value;
+  qrCode.update({
+    data: newQrData
+  });
+};
+const updateQrlastname = () => {
+  newQrData = qrData.value+qrLastname.value;
+  qrCode.update({
+    data: newQrData
+  });
+};
+const updateQrdob = () => {
+  newQrData = qrData.value+qrLastname.value+qrdob.value;
+  qrCode.update({
+    data: newQrData
+  });
+};
+const updateQrnat = () => {
+  newQrData = qrData.value+qrLastname.value+qrdob.value+qrnat.value;
+  qrCode.update({
+    data: newQrData
+  });
+};
+const updateQrblank = () => {
+  newQrData = "Customer Name:"+qrData.value+"   "+"Contact No:"+qrLastname.value+"   "+"Issued Date:"+qrdob.value+"   "+"Order Status:"+qrnat.value+"   "+"Contact Us:"+qrblank.value;
+  qrCode.update({
+    data: newQrData
+  });
+};
+
+
+const updateQrImg = () => {
+  newQrImage = URL.createObjectURL(qrImage.files[0]);
+  console.log(newQrImage);
+  qrCode.update({
+    image: newQrImage
+  });
+};
+
+const updateQrColor = () => {
+  newQrColor = qrColor.value;
+  qrCode.update({
+    dotsOptions: {
+      color: newQrColor
+    }
+  });
+};
+
+const updateQrType = () => {
+  newQrType = qrType.value;
+  qrCode.update({
+    dotsOptions: {
+      type: newQrType
+    }
+  });
+};
+
+const download = () => qrCode.download("jpeg");
+
+qrCode.append(document.getElementById('canvas'));
+</script>
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!-- Required meta tags -->
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+ 
+     <!-- Bootstrap CSS -->
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+ 
+    <title>Bayer_QR_Coder|Products</title>
+    <style> 
+    
+        
+        .form {
+          
+             border-radius: 10px;
+            font-family: Helvetica, sans-serif;
+            max-width: 400px;
+             margin: 0 auto;
+             padding: 16px;
+               background: #ffffff;
+
+}
+.form h1 {
+  border-radius: 10px;
+  background:rgb(2, 26, 70);
+  padding: 20px 0;
+  font-weight: 300;
+  text-align: center;
+  color: #fff;
+  margin: -px -16px 16px -16px;
+  font-size:  25px;
+}
+.form h2{
+    padding-left: 160px;
+}
+.form input[type="text"],
+.form input[type="url"] {
+  box-sizing: border-box;
+  width: 100%;
+  background: #fff;
+  margin-bottom: 4%;
+  border: 1px solid #ccc;
+  padding: 3%;
+  color: #555;
+}
+.form input[type="text"]:focus,
+.form input[type="url"]:focus {
+  box-shadow: 0 0 5px #5868bf;
+  padding: 3%;
+  border: 1px solid #5868bf;
+}
+
+.form button {
+  border-radius: 10px;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  width: 150px;
+  margin: 0 auto;
+  padding: 3%;
+  background:rgb(2, 26, 70);
+  border-bottom: 2px solid rgb(2, 26, 70);
+  border-top-style: none;
+  border-right-style: none;
+  border-left-style: none;
+  color: #fff;
+  cursor: pointer;
+}
+.form button:hover {
+  background: rgba(88,104,191, 0.5);
+}
+#qrcode-container{
+    display:none;
+
+}
+
+.qrcode{
+  padding: 16px;
+}
+.qrcode img{
+  margin: 0 auto;
+}
+    </style>
+</head>
+<body background="https://source.unsplash.com/1600x900/?agriculture">
+    
+    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js">
+    
+    </script>
+    
+    <div class="stamp">
+        <!-- Image and text -->
+        <nav class="navbar navbar-light bg-light">
+          <a class="navbar-brand" href="https://www.cropscience.bayer.com">
+            <img src="\static\bayer.png" width="80" height="80" class="stamp_bayer" alt="null">
+            Bayer Crop Science
+          </a>
+        </nav>
+        
+            </div>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="index.html">QR Code Generator</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+              
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="Under_pro.html">Product Qr Code Generator Manually<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="about_pro.html">About</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                      <div class="dropdown-menu" aria-labelledby="navbarDropdown"></div>
+                      <div class="dropdown-divider"></div>
+                    </div>
+                  </li>
+                  <li class="nav-item">
+                  </li>
+                </ul>
+
+                <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Dropdown
+                      </a>
+                      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                      </div>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                    </li>
+                  </ul> -->
+                  <!-- <li>
+                      <br><br>
+                  </li> -->
+                  <div>
+                  <form action="search_con.html" class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                  </form>
+                </div>
+                </div>
+              </nav>
+
+<div class="form">
+
+  <h1>Products QR Code Generator</h1>
+  <h2> <a href="https://www.cropscience.bayer.in "><img src="\static\bayer.png" alt="" height="60px" width="60px"  ></a> </h2>
+  <form>
+    Enter Product Link: <input type="url" id="website" class="web_1" name="web" placeholder="https://www.cropscience.bayer.com/" required />
+    <!-- <input type="text" id="web" class="web_1" placeholder="Add some Ingredient"> -->
+    <button type="button" onclick="generateQRCode()">
+      Generate QR Code
+    </button>
+  </form>
+
+  
+    <h4>Here You are..</h4>
+    <div id="qrcode-2" class="qrcode"></div>
+  </div>
+
+  <script type="text/javascript">
+    function generateQRCode() {
+      let website = document.getElementById("website").value;
+      if (website  ) {
+        
+        /*With some styles*/
+        let qrcodeContainer2 = document.getElementById("qrcode-2");
+        qrcodeContainer2.innerHTML = "";
+        new QRCode(qrcodeContainer2, {
+          text: website , 
+          
+          width: 128,
+          height: 128,
+          colorDark: "#5868bf",
+          colorLight: "#ffffff",
+          correctLevel: QRCode.CorrectLevel.H
+        });
+        document.getElementById("qrcode-container").style.display = "block";
+      } else {
+        alert("Please enter a valid information");
+      }
+    }
+  </script>
+</div>
+</body>
+</html>
