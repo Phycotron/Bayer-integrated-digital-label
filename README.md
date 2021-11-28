@@ -8,11 +8,12 @@ Web Framework-
 Django (multiple language support)
 
 Hello-Project name
+
 Home-app name
 Static-
 Templates-
 
 Libraries Used-
-Javascript & Bootstrap.
+Javascript & Bootstrap for Templates
 
 While developing, we used HTML, CSS, Javascript, Bootstrap and linked each & every single file by internal method so that it could be easy to navigate and manipulate the files. 
