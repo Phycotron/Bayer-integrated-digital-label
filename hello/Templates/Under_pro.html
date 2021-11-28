@@ -13,6 +13,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 
   <style>
+
+    /* Css style sheet start from here */
     .pro_nav{
     
       border-radius: 10px;
@@ -75,6 +77,9 @@
    #canvas{
      margin-top: 5%;
    } 
+
+
+    /* Css style sheet end here */
   </style>
 
 </head>
@@ -119,11 +124,7 @@
         <!-- <label  >Ordered Status</label> -->
         <div >
         
-          <!-- Ordered:<input type="radio"  onchange="updateQrnat();" name="dataInput" >
-          Placed: <input type="radio" onchange="updateQrnat();" name="dataInput" >
-          Shiped: <input type="radio" onchange="updateQrnat();" name="dataInput" >
-          Delivered: <input type="radio" onchange="updateQrnat();" name="dataInput" >
-          <input type="text" onchange="updateQrnat();" name="dataInput" id="nat" placeholder="malaysia" required /> -->
+         <!-- To manintain CSS style -->
         </div>
         
 
@@ -180,11 +181,17 @@
   <div id="canvas"></div>
 
 </section>
+  
+
 
 <script type="text/javascript" src="qr.js"></script>
 
 </body>
+<!-- JavaScript Start From Here -->
 <script>
+              //  Here we using Id name as datainput,lastname,dob,... this quite diiferent from actual QR code generator interference because during developing process we used this Id to get easier view
+
+
   qrData = document.getElementById('dataInput');
 qrLastname = document.getElementById('lastname');
 qrdob = document.getElementById('dob');
@@ -267,4 +274,6 @@ const download = () => qrCode.download("jpeg");
 
 qrCode.append(document.getElementById('canvas'));
 </script>
+                       <!-- JavaScript End Here -->
+
 </html>

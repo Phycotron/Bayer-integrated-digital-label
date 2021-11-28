@@ -13,6 +13,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 
   <style>
+                   /* CSS Style sheet has conneted as internal method */
+
     .pro_nav{
     
       border-radius: 10px;
@@ -107,9 +109,7 @@
         <input type="text" onchange="updateQrData();"  name="dataInput" id="dataInput" placeholder="Mohan" required />
         
 
-        <!-- <label for="dataInput">Contact No</label>
-        <input type="text" onchange="updateQrlastname();" name="dataInput" id="lastname" placeholder="+91..." required />
-        <br> -->
+      
 
         <label for="dataInput">Issued Date</label>
         <input type="date" onchange="updateQrdob();" name="dataInput" id="dob" placeholder="01/01/2001" required />
@@ -117,11 +117,7 @@
 
         <!-- <label  >Ordered Status</label> -->
         <div >
-          <!-- Ordered:<input type="radio"  onchange="updateQrnat();" name="dataInput" >
-          Placed: <input type="radio" onchange="updateQrnat();" name="dataInput" >
-          Shiped: <input type="radio" onchange="updateQrnat();" name="dataInput" >
-          Delivered: <input type="radio" onchange="updateQrnat();" name="dataInput" > -->
-          <!-- <input type="text" onchange="updateQrnat();" name="dataInput" id="nat" placeholder="malaysia" required /> -->
+         <!-- To maintain css style -->
         </div>
           <br>  
 
@@ -134,8 +130,7 @@
         <label for="dataInput">contact-us</label>
         <input type="text" onchange="updateQrblank();" name="dataInput" id="blank" placeholder="Phone/link " required />
 
-        <!-- <label for="dataInput">Remarks</label>
-        <input type="text" onchange="updateQrblank();" name="dataInput" id="blank" placeholder="Link/" required /> -->
+        
 
       </div>
 
@@ -184,7 +179,12 @@
 <script type="text/javascript" src="qr.js"></script>
 
 </body>
+
+    <!-- JavaScript Start from Here -->
 <script>
+
+  //  Here we using Id name as datainput,lastname,dob,... this quite diiferent from actual QR code generator interference because during developing process we used this Id to get easier view
+
   qrData = document.getElementById('dataInput');
 qrLastname = document.getElementById('lastname');
 qrdob = document.getElementById('dob');
@@ -267,4 +267,6 @@ const download = () => qrCode.download("jpeg");
 
 qrCode.append(document.getElementById('canvas'));
 </script>
+        <!-- JavaScript End Here -->
+
 </html>
