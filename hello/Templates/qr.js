@@ -1,3 +1,6 @@
+
+// Javascripts that we build for Qr code Interference
+
 // qrData = document.getElementById('dataInput');
 // qrLastname = document.getElementById('lastname');
 // qrdob = document.getElementById('dob');
