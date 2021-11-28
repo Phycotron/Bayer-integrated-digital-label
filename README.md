@@ -10,7 +10,9 @@ Django (multiple language support)
 Hello-Project name
 
 Home-app name
+
 Static-
+
 Templates-
 
 Libraries Used-
