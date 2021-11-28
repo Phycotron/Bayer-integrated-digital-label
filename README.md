@@ -1,4 +1,6 @@
 #Bayer-integrated-digital-label
+
+
 'gh’-
 Virtual Environment which is used by Django to execute the application and environment variables that act as server env and secure the process of running our scripts and application.
 
